@@ -1,31 +1,48 @@
 import threading
-import os
+import time
 
-def asansor1():
-    print("1. Asansör threadi: {}".format(threading.current_thread().name)) 
-    print("1. Asansörün ID'si: {}".format(os.getpid())) 
+asansor = []
+suAnKat = 0
 
-def asansor2():
-    print("2. Asansör threadi: {}".format(threading.current_thread().name)) 
-    print("2. Asansörün ID'si: {}".format(os.getpid())) 
+def get_input():
+    input1 = input()
+    asansor.append(input1)
 
+    
+def increment():
+    global suAnKat
+    suAnKat+=1
+    time.sleep(2)
+    print("Yukarıya doğru gidiyor, bulunduğu kat: ", suAnKat)
+    
+def decrement():
+    global suAnKat
+    suAnKat-=1
+    time.sleep(2)
+    print("Aşağıya doğru gidiyor, bulunduğu kat: ", suAnKat)
+    
+def traverse():
+    if asansor:
+        while(True):
+            if asansor:
+                if(suAnKat > int(asansor[0])):
+                    decrement()
+                    
+                if(str(suAnKat) in asansor):
+                    print("Asansör durdu, bulunduğu kat: ", suAnKat)
+                    asansor.remove(str(suAnKat))
+                    break
+                    
+                if(suAnKat < int(asansor[0])):
+                    increment()
+    
 
-if __name__ == "__main__": 
-  
-    # print ID of current process 
-    print("Programın ID'si: {}".format(os.getpid())) 
-  
-    # print name of main thread 
-    print("Main thread adı: {}".format(threading.current_thread().name)) 
-  
-    # creating threads 
-    a1 = threading.Thread(target=asansor1, name='a1') 
-    a2 = threading.Thread(target=asansor2, name='a2')   
-  
-    # starting threads 
-    a1.start() 
-    a2.start() 
-  
-    # wait until all threads finish 
-    a1.join() 
-    a2.join() 
+if __name__ == '__main__':
+    print("Asansörün gitmesini istediğiniz kat numarasını giriniz: ", end="")
+    while(True):
+        t1= threading.Thread(target=get_input, name='t1')
+        t2= threading.Thread(target=traverse, name='t2')
+        t1.start()
+        time.sleep(5)
+        traverse()
+        t2.start()
