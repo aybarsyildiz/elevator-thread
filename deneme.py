@@ -2,7 +2,7 @@ import threading
 import time
 import random
 
-kat =[0,5]
+kat =[0]
 """
 kat0=0
 kat1=0
