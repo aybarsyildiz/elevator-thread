@@ -124,13 +124,15 @@ def asanor5():
             katlar=gidilecekKatlar(kat[0])
     
     time.sleep(0.2)
-    """
-    """
+    
+    
     def do_something(seconds):
     print(f"Sleeping {seconds} second...")
     time.sleep(seconds)
     print("Done Sleeping")
-    """
+
+"""
+
 
 t1=threading.Thread(target=login)
 t2=threading.Thread(target=exit)
