@@ -1,13 +1,20 @@
 import threading
 import time
+import random
 
 asansor = []
+toplam_musteri_sayisi = 0
 suAnKat = 0
 
 def get_input():
     input1 = input()
     asansor.append(input1)
 
+def musteri_giris():
+    toplam_musteri_sayisi += random.randint(1,10)
+
+def musteri_cikis():
+    toplam_musteri_sayisi -= random.randint(1,5)
     
 def increment():
     global suAnKat
