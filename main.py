@@ -4,6 +4,8 @@ import random
 
 asansor = []
 toplam_musteri_sayisi = 0
+musteri_queue = [[5,3],[3,4]]
+
 suAnKat = 0
 
 def get_input():
@@ -11,10 +13,14 @@ def get_input():
     asansor.append(input1)
 
 def musteri_giris():
-    toplam_musteri_sayisi += random.randint(1,10)
-
+    #toplam_musteri_sayisi += random.randint(1,10)
+    musteri_queue.append([toplam_musteri_sayisi,random.randint(1,5)])
+    asansor.append(musteri_queue[0][1])
+    
+    
 def musteri_cikis():
-    toplam_musteri_sayisi -= random.randint(1,5)
+    #toplam_musteri_sayisi -= random.randint(1,5)
+    musteri_queue.pop(0)
     
 def increment():
     global suAnKat
@@ -32,12 +38,15 @@ def traverse():
     if asansor:
         while(True):
             if asansor:
+                
+
                 if(suAnKat > int(asansor[0])):
                     decrement()
                     
                 if(str(suAnKat) in asansor):
                     print("Asansör durdu, bulunduğu kat: ", suAnKat)
                     asansor.remove(str(suAnKat))
+                    musteri_cikis
                     break
                     
                 if(suAnKat < int(asansor[0])):
@@ -45,9 +54,14 @@ def traverse():
     
 
 if __name__ == '__main__':
-    print("Asansörün gitmesini istediğiniz kat numarasını giriniz: ", end="")
+    
+    print(musteri_queue)
+    
     while(True):
-        t1= threading.Thread(target=get_input, name='t1')
+        
+        gidilecek_kat = musteri_queue[0][1]
+        print("1. asansörün gideceği kat: ", gidilecek_kat)
+        t1= threading.Thread(target=musteri_giris, name='t1')
         t2= threading.Thread(target=traverse, name='t2')
         t1.start()
         time.sleep(5)
