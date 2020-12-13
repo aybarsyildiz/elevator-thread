@@ -1,12 +1,14 @@
 import threading
 import time
 import random
+import PySimpleGUI as sg
 
 asansor = []
 toplam_musteri_sayisi = 0
 musteri_queue = [[5,3],[3,4],[1,2]]
-
+#layout = [[sg.Text("Müşteriler")],[sg.Text(str(musteri_queue))]]
 suAnKat = 0
+#window = sg.Window("elevator thread",layout, margins=(400,350))
 
 def get_input():
     input1 = input()
@@ -46,7 +48,7 @@ def traverse():
                     print("Asansör durdu, bulunduğu kat: ", suAnKat)
                     asansor.pop(0)
                     musteri_cikis()
-                    print(musteri_queue[0][1])
+                    
                     asansor.append(musteri_queue[0][1])
                     break
                     
@@ -60,6 +62,7 @@ if __name__ == '__main__':
     
     while(True):
         
+        #event, values = window.read()
         gidilecek_kat = musteri_queue[0][1]
         print("1. asansörün gideceği kat: ", gidilecek_kat)
         t1= threading.Thread(target=musteri_giris, name='t1')
@@ -68,3 +71,6 @@ if __name__ == '__main__':
         time.sleep(5)
         traverse()
         t2.start()
+        
+        
+    
