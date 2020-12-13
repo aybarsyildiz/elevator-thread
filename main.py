@@ -4,7 +4,7 @@ import random
 
 asansor = []
 toplam_musteri_sayisi = 0
-musteri_queue = [[5,3],[3,4]]
+musteri_queue = [[5,3],[3,4],[1,2]]
 
 suAnKat = 0
 
@@ -20,7 +20,7 @@ def musteri_giris():
     
 def musteri_cikis():
     #toplam_musteri_sayisi -= random.randint(1,5)
-    musteri_queue.pop(0)
+    return musteri_queue.pop(0)
     
 def increment():
     global suAnKat
@@ -38,18 +38,19 @@ def traverse():
     if asansor:
         while(True):
             if asansor:
-                
-
-                if(suAnKat > int(asansor[0])):
+                2
+                if(suAnKat > asansor[0]):
                     decrement()
                     
-                if(str(suAnKat) in asansor):
+                if(suAnKat == asansor[0]):
                     print("Asansör durdu, bulunduğu kat: ", suAnKat)
-                    asansor.remove(str(suAnKat))
-                    musteri_cikis
+                    asansor.pop(0)
+                    musteri_cikis()
+                    print(musteri_queue[0][1])
+                    asansor.append(musteri_queue[0][1])
                     break
                     
-                if(suAnKat < int(asansor[0])):
+                if(suAnKat < asansor[0]):
                     increment()
     
 
