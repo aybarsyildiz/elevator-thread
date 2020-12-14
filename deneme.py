@@ -6,7 +6,7 @@ kat =[0,0,0,0,0]#Kattaki kişiler
 
 çıkışKat=[0,0,0,0]#Kattan çıkmak isteyen kişiler
 
-asansor=[[True,0,0],[False,0,0],[False,0,0],[False,0,0],[False,0,0]] #[Çalışıyo mu, kaçıncı katta, kaç kişi var]
+asansor=[[True,True,0,0],[False,0,0],[False,0,0],[False,0,0],[False,0,0]] #[Çalışıyo mu, Yukarı çıkıyor mu, kaçıncı katta, kaç kişi var]
 
 
 start = time.perf_counter()
@@ -29,7 +29,7 @@ def gidilecekKatlar(sayi):
     return katlar
 
 
-def exit():
+def exit():#Düzenle
     global çıkışKat
     global kat
     while(True):
@@ -44,23 +44,60 @@ def exit():
 
     time.sleep(1)
 
-"""
+
 def asanor1():
     global kat
     global asansor
+    katlar =[0,0,0,0]
     while(True):
-        asansorler=0
-        for i in range(4):
-            if asansor[i][0]==True:
-                asansorler+=1
-        
-        if kat[0]>10:
-            katlar=gidilecekKatlar(10)
-        elif kat[0]<0:
-            katlar=gidilecekKatlar(kat[0])
-    
-    time.sleep(0.2)
+        if asansor[0][0]==True: #Asansör çalışıyo mu?
+            
+            if asansor[0][2]==0: #Asansör 0. katta mı?
+                
+                if asansor[0][3]>0: #Asansörde müşteri var mı?
+                    asansor[0][3]=0 #Varsa insinler
+                
+                #elif asansor[0][3]==0: #Asansörde müşteri yok mu?
+                    
+                if kat[0]>10: #Katta 10'dan fazla müşteri mi var 
+                    asansor[0][3]=10 #Varsa 10 kişi al
+                    kat[0]-=10 #0.kattan 10 kişi eksilt
+                    katlar = gidilecekKatlar(10)
+                elif kat[0]<10: #Katta 10'dan az kişi varsa
+                    asansor[0][3]=kat[0] #Kattaki herkesi al
+                    kat[0]=0 #Katı boşalt
+                    katlar = gidilecekKatlar(kat[0])
+            
+            asansor[0][2]+=1 #Yukarı çık
 
+        else: #0.Katta değilse
+            
+            if asansor[0][1]==True:
+                kat[asansor[0][2]] = katlar[asansor[0][2]-1] # Kat listesindeki insaları katlara aktar
+                asansor[0][3]-=katlar[asansor[0][2]-1] #Asansörden inen kişileri çıkar
+                katlar[asansor[0][2]-1]=0 #Bulunan Kat listesini Temizle
+                asansor[0][2]+=1
+                if asansor[0][2]==5:
+                    asansor[0][1]=False
+            else:
+                
+
+
+
+                
+
+
+
+
+
+
+                
+                
+                
+                
+                
+    time.sleep(0.2)
+"""
 def asanor2():
     global kat
     global asansor
