@@ -25,7 +25,7 @@ def gidilecekKatlar(sayi):
     for i in range(sayi):
         katlar[random.randint(0,3)]+=1
     
-    print(katlar)
+    #print(katlar)
     return katlar
 
 
@@ -46,11 +46,11 @@ def exit():#Düzenle
 
 
 
-def asanor1():
+def asansor1():
     global kat
     global asansor
     global çıkışKat
-    katlar =[0,0,0,0]
+    
     while(True):
         if asansor[0][0]==True: #Asansör çalışıyo mu?
             
@@ -65,57 +65,51 @@ def asanor1():
                     asansor[0][3]=10 #Varsa 10 kişi al
                     kat[0]-=10 #0.kattan 10 kişi eksilt
                     katlar = gidilecekKatlar(10)
-                elif kat[0]<10: #Katta 10'dan az kişi varsa
+                else: #Katta 10'dan az kişi varsa
                     asansor[0][3]=kat[0] #Kattaki herkesi al
                     kat[0]=0 #Katı boşalt
                     katlar = gidilecekKatlar(kat[0])
             
-            asansor[0][2]+=1 #Yukarı çık
+                asansor[0][2]+=1 #Yukarı çık
+                print(f"Asansor {asansor[0][2]}. kata çıktı")
 
-        else: #0.Katta değilse
+            else: #0.Katta değilse
             
-            if asansor[0][1]==True:
-                kat[asansor[0][2]] += katlar[asansor[0][2]-1] # Kat listesindeki insaları katlara aktar
-                asansor[0][3]-=katlar[asansor[0][2]-1] #Asansörden inen kişileri çıkar
-                katlar[asansor[0][2]-1]=0 #Bulunan Kat listesini Temizle
-                
-                if asansor[0][2]==4:
+                if asansor[0][1]==True:
+                    kat[asansor[0][2]] += katlar[asansor[0][2]-1] # Kat listesindeki insaları katlara aktar
+                    asansor[0][3]-=katlar[asansor[0][2]-1] #Asansörden inen kişileri çıkar
+                    katlar[asansor[0][2]-1]=0 #Bulunan Kat listesini Temizle
+                   
+                    if asansor[0][2]==4:
                     
-                    if çıkışKat[asansor[0][2]-1]>=10:
-                        asansor[0][3]+=10
-                        kat[asansor[0][2]]-=10
-                        çıkışKat[asansor[0][2]-1]-=10
-                    else:
-                        asansor[0][3]=çıkışKat[asansor[0][2]-1] #Çıkacak kişileri asansore al
-                        kat[asansor[0][2]]-=çıkışKat[asansor[0][2]-1]
-                        çıkışKat[asansor[0][2]-1]=0
+                        if çıkışKat[asansor[0][2]-1]>=10:
+                            asansor[0][3]+=10
+                            kat[asansor[0][2]]-=10
+                            çıkışKat[asansor[0][2]-1]-=10
+                        else:
+                            asansor[0][3]=çıkışKat[asansor[0][2]-1] #Çıkacak kişileri asansore al
+                            kat[asansor[0][2]]-=çıkışKat[asansor[0][2]-1]
+                            çıkışKat[asansor[0][2]-1]=0
                 
-                    asansor[0][2]-=2    
-                    asansor[0][1]=False
+                        asansor[0][2]-=2    
+                        asansor[0][1]=False
                
-                asansor[0][2]+=1
-            else:
-                
-                if çıkışKat[asansor[0][2]-1]>=10:
-                    asansor[0][3]+=(10-asansor[0][3])
-                    kat[asansor[0][2]]-=(10-asansor[0][3])  
-                    çıkışKat[asansor[0][2]-1]-=(10-asansor[0][3])
+                    asansor[0][2]+=1
+                    print(f"Asansor {asansor[0][2]}. kata çıktı")
                 else:
-                    
-                    if (asansor[0][3]+çıkışKat[asansor[0][2]-1])>10:
-                        asansor[0][3]+=çıkışKat[asansor[0][2]-1]          #Çıkacak kişileri asansore al
-                        kat[asansor[0][2]]-=çıkışKat[asansor[0][2]-1]
-                        çıkışKat[asansor[0][2]-1]=0
-                    
-                    else:
-                        asansor[0][3]+=çıkışKat[asansor[0][2]-1]          #Çıkacak kişileri asansore al
-                        kat[asansor[0][2]]-=çıkışKat[asansor[0][2]-1]
-                        çıkışKat[asansor[0][2]-1]=0
-
-
-
                 
-                asansor[0][2]-=1
+                    if  asansor[0][3] != 10:
+                        if (asansor[0][3]+çıkışKat[asansor[0][2]-1])>=10:
+                            asansor[0][3]+=(10-asansor[0][3])
+                            kat[asansor[0][2]]-=(10-asansor[0][3])  
+                            çıkışKat[asansor[0][2]-1]-=(10-asansor[0][3])
+                        else:
+                            asansor[0][3]+=çıkışKat[asansor[0][2]-1]          
+                            kat[asansor[0][2]]-=çıkışKat[asansor[0][2]-1]
+                            çıkışKat[asansor[0][2]-1]=0
+
+                    asansor[0][2]-=1
+                    print(f"Asansor {asansor[0][2]}. kata indi")
                 
                 
 
@@ -136,7 +130,7 @@ def asanor1():
                 
                 
                 
-    time.sleep(0.2)
+    time.sleep(10)
 """
 def asanor2():
     global kat
@@ -213,16 +207,17 @@ def asanor5():
 
 t1=threading.Thread(target=login)
 t2=threading.Thread(target=exit)
-#t1=threading.Thread(target=login)
+t3=threading.Thread(target=asansor1)
 #t1=threading.Thread(target=login)
 #t1=threading.Thread(target=login)
 
 t1.start()
 t2.start()
+t3.start()
 
 t1.join()
 t2.join()
-
+t3.join()
 
 
 
