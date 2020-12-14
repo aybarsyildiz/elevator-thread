@@ -5,7 +5,7 @@ import PySimpleGUI as sg
 
 asansor = []
 toplam_musteri_sayisi = 0
-musteri_queue = [[5,3],[3,4],[1,2]]
+musteri_queue = [[5,3],[3,4],[1,1],[2,3]] #müşteri sayısı - gideceği kat
 #layout = [[sg.Text("Müşteriler")],[sg.Text(str(musteri_queue))]]
 suAnKat = 0
 #window = sg.Window("elevator thread",layout, margins=(400,350))
