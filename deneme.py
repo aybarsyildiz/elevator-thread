@@ -167,90 +167,90 @@ def asansor1(sayi):
 
         time.sleep(1)
 
+def GUI():
+    root =tk.Tk()
+    canvas = tk.Canvas(root, height=600 ,width=1300)
+    canvas.pack()
 
-root =tk.Tk()
-canvas = tk.Canvas(root, height=600 ,width=1300)
-canvas.pack()
+    frame = tk.Frame(root,bg='#192633')
+    frame.place(relwidth=1,relheight=1)
+    #Asansör 1
+    label11=tk.Label(frame,text=str(çalışıyormu(0)),fg='white',bg='#192633')
+    label11.place(relx=0.03,rely=0.18,relwidth=0.16,relheight=0.12)
 
-frame = tk.Frame(root,bg='#192633')
-frame.place(relwidth=1,relheight=1)
-#Asansör 1
-label11=tk.Label(frame,text=str(çalışıyormu(0)),fg='white',bg='#192633')
-label11.place(relx=0.03,rely=0.18,relwidth=0.16,relheight=0.12)
+    label12=tk.Label(frame,text="Naber",fg='white',bg='#192633')
+    label12.place(relx=0.03,rely=0.31,relwidth=0.16,relheight=0.12)
 
-label12=tk.Label(frame,text="Naber",fg='white',bg='#192633')
-label12.place(relx=0.03,rely=0.31,relwidth=0.16,relheight=0.12)
+    label13=tk.Label(frame,text="Naber",fg='white',bg='#192633')
+    label13.place(relx=0.03,rely=0.44,relwidth=0.16,relheight=0.12)
 
-label13=tk.Label(frame,text="Naber",fg='white',bg='#192633')
-label13.place(relx=0.03,rely=0.44,relwidth=0.16,relheight=0.12)
+    label14=tk.Label(frame,text="Naber",fg='white',bg='#192633')
+    label14.place(relx=0.03,rely=0.57,relwidth=0.16,relheight=0.12)
 
-label14=tk.Label(frame,text="Naber",fg='white',bg='#192633')
-label14.place(relx=0.03,rely=0.57,relwidth=0.16,relheight=0.12)
+    label15=tk.Label(frame,text="Naber",fg='white',bg='#192633')
+    label15.place(relx=0.03,rely=0.70,relwidth=0.16,relheight=0.12)
+    #Asansör2
+    label21=tk.Label(frame,text=str(çalışıyormu(1)),fg='white',bg='#192633')
+    label21.place(relx=0.22,rely=0.18,relwidth=0.16,relheight=0.12)
 
-label15=tk.Label(frame,text="Naber",fg='white',bg='#192633')
-label15.place(relx=0.03,rely=0.70,relwidth=0.16,relheight=0.12)
-#Asansör2
-label21=tk.Label(frame,text=str(çalışıyormu(1)),fg='white',bg='#192633')
-label21.place(relx=0.22,rely=0.18,relwidth=0.16,relheight=0.12)
+    label22=tk.Label(frame,text="Naber",fg='white',bg='#192633')
+    label22.place(relx=0.22,rely=0.31,relwidth=0.16,relheight=0.12)
 
-label22=tk.Label(frame,text="Naber",fg='white',bg='#192633')
-label22.place(relx=0.22,rely=0.31,relwidth=0.16,relheight=0.12)
+    label23=tk.Label(frame,text="Naber",fg='white',bg='#192633')
+    label23.place(relx=0.22,rely=0.44,relwidth=0.16,relheight=0.12)
 
-label23=tk.Label(frame,text="Naber",fg='white',bg='#192633')
-label23.place(relx=0.22,rely=0.44,relwidth=0.16,relheight=0.12)
+    label24=tk.Label(frame,text="Naber",fg='white',bg='#192633')
+    label24.place(relx=0.22,rely=0.57,relwidth=0.16,relheight=0.12)
 
-label24=tk.Label(frame,text="Naber",fg='white',bg='#192633')
-label24.place(relx=0.22,rely=0.57,relwidth=0.16,relheight=0.12)
+    label25=tk.Label(frame,text="Naber",fg='white',bg='#192633')
+    label25.place(relx=0.22,rely=0.70,relwidth=0.16,relheight=0.12)
+    #Asansör3
+    label31=tk.Label(frame,text=str(çalışıyormu(2)),fg='white',bg='#192633')
+    label31.place(relx=0.41,rely=0.18,relwidth=0.16,relheight=0.12)
 
-label25=tk.Label(frame,text="Naber",fg='white',bg='#192633')
-label25.place(relx=0.22,rely=0.70,relwidth=0.16,relheight=0.12)
-#Asansör3
-label31=tk.Label(frame,text=str(çalışıyormu(2)),fg='white',bg='#192633')
-label31.place(relx=0.41,rely=0.18,relwidth=0.16,relheight=0.12)
+    label32=tk.Label(frame,text="Naber",fg='white',bg='#192633')
+    label32.place(relx=0.41,rely=0.31,relwidth=0.16,relheight=0.12)
 
-label32=tk.Label(frame,text="Naber",fg='white',bg='#192633')
-label32.place(relx=0.41,rely=0.31,relwidth=0.16,relheight=0.12)
+    label33=tk.Label(frame,text="Naber",fg='white',bg='#192633')
+    label33.place(relx=0.41,rely=0.44,relwidth=0.16,relheight=0.12)
 
-label33=tk.Label(frame,text="Naber",fg='white',bg='#192633')
-label33.place(relx=0.41,rely=0.44,relwidth=0.16,relheight=0.12)
+    label34=tk.Label(frame,text="Naber",fg='white',bg='#192633')
+    label34.place(relx=0.41,rely=0.57,relwidth=0.16,relheight=0.12)
 
-label34=tk.Label(frame,text="Naber",fg='white',bg='#192633')
-label34.place(relx=0.41,rely=0.57,relwidth=0.16,relheight=0.12)
+    label35=tk.Label(frame,text="Naber",fg='white',bg='#192633')
+    label35.place(relx=0.41,rely=0.70,relwidth=0.16,relheight=0.12)
+    #Asansör4
+    label41=tk.Label(frame,text=str(çalışıyormu(3)),fg='white',bg='#192633')
+    label41.place(relx=0.60,rely=0.18,relwidth=0.16,relheight=0.12)
 
-label35=tk.Label(frame,text="Naber",fg='white',bg='#192633')
-label35.place(relx=0.41,rely=0.70,relwidth=0.16,relheight=0.12)
-#Asansör4
-label41=tk.Label(frame,text=str(çalışıyormu(3)),fg='white',bg='#192633')
-label41.place(relx=0.60,rely=0.18,relwidth=0.16,relheight=0.12)
+    label42=tk.Label(frame,text="Naber",fg='white',bg='#192633')
+    label42.place(relx=0.60,rely=0.31,relwidth=0.16,relheight=0.12)
 
-label42=tk.Label(frame,text="Naber",fg='white',bg='#192633')
-label42.place(relx=0.60,rely=0.31,relwidth=0.16,relheight=0.12)
+    label43=tk.Label(frame,text="Naber",fg='white',bg='#192633')
+    label43.place(relx=0.60,rely=0.44,relwidth=0.16,relheight=0.12)
 
-label43=tk.Label(frame,text="Naber",fg='white',bg='#192633')
-label43.place(relx=0.60,rely=0.44,relwidth=0.16,relheight=0.12)
+    label44=tk.Label(frame,text="Naber",fg='white',bg='#192633')
+    label44.place(relx=0.60,rely=0.57,relwidth=0.16,relheight=0.12)
 
-label44=tk.Label(frame,text="Naber",fg='white',bg='#192633')
-label44.place(relx=0.60,rely=0.57,relwidth=0.16,relheight=0.12)
+    label45=tk.Label(frame,text="Naber",fg='white',bg='#192633')
+    label45.place(relx=0.60,rely=0.70,relwidth=0.16,relheight=0.12)
+    #Asansör5
+    label51=tk.Label(frame,text=str(çalışıyormu(4)),fg='white',bg='#192633')
+    label51.place(relx=0.79,rely=0.18,relwidth=0.16,relheight=0.12)
 
-label45=tk.Label(frame,text="Naber",fg='white',bg='#192633')
-label45.place(relx=0.60,rely=0.70,relwidth=0.16,relheight=0.12)
-#Asansör5
-label51=tk.Label(frame,text=str(çalışıyormu(4)),fg='white',bg='#192633')
-label51.place(relx=0.79,rely=0.18,relwidth=0.16,relheight=0.12)
+    label52=tk.Label(frame,text="Naber",fg='white',bg='#192633')
+    label52.place(relx=0.79,rely=0.31,relwidth=0.16,relheight=0.12)
 
-label52=tk.Label(frame,text="Naber",fg='white',bg='#192633')
-label52.place(relx=0.79,rely=0.31,relwidth=0.16,relheight=0.12)
+    label53=tk.Label(frame,text="Naber",fg='white',bg='#192633')
+    label53.place(relx=0.79,rely=0.44,relwidth=0.16,relheight=0.12)
 
-label53=tk.Label(frame,text="Naber",fg='white',bg='#192633')
-label53.place(relx=0.79,rely=0.44,relwidth=0.16,relheight=0.12)
+    label54=tk.Label(frame,text="Naber",fg='white',bg='#192633')
+    label54.place(relx=0.79,rely=0.57,relwidth=0.16,relheight=0.12)
 
-label54=tk.Label(frame,text="Naber",fg='white',bg='#192633')
-label54.place(relx=0.79,rely=0.57,relwidth=0.16,relheight=0.12)
+    label55=tk.Label(frame,text="Naber",fg='white',bg='#192633')
+    label55.place(relx=0.79,rely=0.70,relwidth=0.16,relheight=0.12)
 
-label55=tk.Label(frame,text="Naber",fg='white',bg='#192633')
-label55.place(relx=0.79,rely=0.70,relwidth=0.16,relheight=0.12)
-
-root.mainloop()
+    root.mainloop()
 
 
 
@@ -264,10 +264,11 @@ t5=threading.Thread(target=asansor1,args=[2])
 t6=threading.Thread(target=asansor1,args=[3])
 t7=threading.Thread(target=asansor1,args=[4])
 t8=threading.Thread(target=denetle)
-root.mainloop()
+guith = threading.Thread(target=GUI)
+#root.mainloop()
 #t1=threading.Thread(target=login)
-z=threading.Thread(target=root.mainloop)
-z.start()
+#z=threading.Thread(target=root.mainloop)
+#z.start()
 t1.start()
 t2.start()
 t3.start()
@@ -276,6 +277,7 @@ t5.start()
 t6.start()
 t7.start()
 t8.start()
+guith.start()
 
 
 t1.join()
